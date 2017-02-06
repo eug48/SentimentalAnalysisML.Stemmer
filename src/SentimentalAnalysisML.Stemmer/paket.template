@@ -1,0 +1,25 @@
+type project
+title
+    SentimentalAnalysisML.Stemmer
+owners
+    dominikus1993
+authors 
+    dominikus1993
+projectUrl
+    https://github.com/SentimentalAnalysisML/SentimentalAnalysisML.Stemmer
+iconUrl
+    https://raw.githubusercontent.com/SentimentalAnalysisML/SentimentalAnalysisML.Stemmer/master/docs/files/img/logo.png
+licenseUrl
+    https://github.com/SentimentalAnalysisML/SentimentalAnalysisML.Stemmer/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    F# ML
+summary
+    An English (Porter2) stemming F# implementation.
+description
+    An English (Porter2) stemming F# implementation.
+
+
