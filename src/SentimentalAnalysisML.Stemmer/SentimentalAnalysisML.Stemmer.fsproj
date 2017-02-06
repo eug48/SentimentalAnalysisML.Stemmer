@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>SentimentalAnalysisML.Stemmer</RootNamespace>
     <AssemblyName>SentimentalAnalysisML.Stemmer</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.0.0</TargetFSharpCoreVersion>
     <Name>SentimentalAnalysisML.Stemmer</Name>
     <TargetFrameworkProfile />

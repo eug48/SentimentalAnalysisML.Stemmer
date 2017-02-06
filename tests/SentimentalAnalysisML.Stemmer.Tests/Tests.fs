@@ -1,10 +1,11 @@
-module SentimentalAnalysisML.Stemmer.Tests
+module Tests
 
+open Expecto
 open SentimentalAnalysisML.Stemmer
-open NUnit.Framework
-
-[<Test>]
-let ``hello returns 42`` () =
-  let result = Library.hello 42
-  printfn "%i" result
-  Assert.AreEqual(42,result)
+[<Tests>]
+let tests =
+  testList "samples" [
+    testCase "universe exists" <| fun _ ->
+      let subject = Library.hello 42
+      Expect.equal subject 42 "should equal 42"
+  ]

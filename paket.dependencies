@@ -1,5 +1,7 @@
 source https://nuget.org/api/v2
 
+nuget Expecto
+nuget FAKE
 nuget FSharp.Core redirects: force
 
 group Build
@@ -13,6 +15,5 @@ group Build
 
 group Test
   source https://nuget.org/api/v2
-  
-  nuget NUnit ~> 2
-  nuget NUnit.Runners ~> 2
+  nuget Expecto
+  nuget FSharp.Core
