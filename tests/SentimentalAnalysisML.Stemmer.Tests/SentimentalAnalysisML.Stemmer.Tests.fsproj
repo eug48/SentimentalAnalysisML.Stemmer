@@ -51,6 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tests.fs" />
+    <Compile Include="Dto.Tests.fs" />
+    <Compile Include="SpecialWord.Tests.fs" />
+    <Compile Include="Steps.Tests.fs" />
+    <Compile Include="Rules.Tests.fs" />
+    <Compile Include="Stemmer.Tests.fs" />
     <Compile Include="Main.fs" />
     <None Include="App.config" />
   </ItemGroup>

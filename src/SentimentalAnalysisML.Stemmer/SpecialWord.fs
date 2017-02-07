@@ -1,7 +1,7 @@
-namespace StemmerFS
+namespace  SentimentalAnalysisML.Stemmer
 
 module SpecialWord =
-    open StemmerFS.Dto
+    open  SentimentalAnalysisML.Stemmer.Dto
 
     let specialWord(word: string) = 
         let map = [ ("skis", "ski")
@@ -24,8 +24,8 @@ module SpecialWord =
         | None -> Next(word)
 
 module PostSpecialWord =
-    open StemmerFS.Dto
-    open StemmerFS.Steps
+    open SentimentalAnalysisML.Stemmer.Dto
+    open SentimentalAnalysisML.Stemmer.Steps
 
     let private postInvariant(invariant: (string * bool)) =
         match invariant with

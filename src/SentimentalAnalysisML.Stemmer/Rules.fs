@@ -2,11 +2,10 @@ namespace SentimentalAnalysisML.Stemmer
 
 module Rules = 
     open System.Text.RegularExpressions
-    open Microsoft.FSharpLu.Text
     open SentimentalAnalysisML.Stemmer.Dto
     open SentimentalAnalysisML.Stemmer.Utils
-    open SentimentFS.Text.Regex
-    open SentimentFS.Text
+    open SentimentalAnalysisML.Utils.Regex
+    open SentimentalAnalysisML.Utils
 
     [<Literal>]
     let V = "aeiouy"

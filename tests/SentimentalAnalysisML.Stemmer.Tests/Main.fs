@@ -1,7 +1,9 @@
-module SentimentalAnalysisML.Stemmer.Tests
+namespace SentimentalAnalysisML.Stemmer.Tests
 
-open Expecto
 
-[<EntryPoint>]
-let main argv =
-    Tests.runTestsInAssembly defaultConfig argv
+module Program =
+    open Expecto
+    
+    [<EntryPoint>]
+    let main argv =
+        Tests.runTestsInAssembly defaultConfig argv

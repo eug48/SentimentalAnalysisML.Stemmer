@@ -1,8 +1,8 @@
-namespace SentimentalAnalysisML.Stemmer
+namespace SentimentalAnalysisML.Stemmer.Steps
 
 module Step0 = 
     open System.Text.RegularExpressions
-    open SentimentalAnalysisML.Stemmer
+    open SentimentalAnalysisML.Stemmer.Rules
 
     [<CompiledName("TrimApostrophes")>]
     let rec trimApostrophes(word:string) =  
@@ -87,8 +87,8 @@ module Step2 =
     open SentimentalAnalysisML.Stemmer.Dto
     open SentimentalAnalysisML.Stemmer
     open System.Text.RegularExpressions
-    open SentimentFS.Text
-    open SentimentFS.Text.Regex
+    open SentimentalAnalysisML.Utils
+    open SentimentalAnalysisML.Utils.Regex
    
     [<CompiledName("postRemoveEdEdlyIngIngly")>]
     let postRemoveEdEdlyIngIngly(word: string) = 
@@ -147,9 +147,8 @@ module Step3 =
     open SentimentalAnalysisML.Stemmer
     open SentimentalAnalysisML.Stemmer.Dto
     open SentimentalAnalysisML.Stemmer.Utils
-    open Microsoft.FSharpLu.Text
-    open SentimentFS.Text
-    open SentimentFS.Text.Regex
+    open SentimentalAnalysisML.Utils
+    open SentimentalAnalysisML.Utils.Regex
    
     let private replaceSuffixOgi(word: string) =
         if (Text.endsWith word [|(Rules.r1(word))|]) && (Text.endsWith word [|"logi"|]) then
@@ -200,7 +199,7 @@ module Step4 =
     open SentimentalAnalysisML.Stemmer.Utils
     open SentimentalAnalysisML.Stemmer.Dto
     open SentimentalAnalysisML.Stemmer
-    open SentimentFS.Text
+    open SentimentalAnalysisML.Utils
     let private replaceSuffixAtiveInR2(word: string) =
         if (Text.endsWith (Rules.r2(word)) ([|"ative"|])) then
             Found((word |> Text.replaceSuffix ("ative", "") ))
@@ -226,8 +225,8 @@ module Step5 =
     open SentimentalAnalysisML.Stemmer.Utils
     open SentimentalAnalysisML.Stemmer.Dto
     open SentimentalAnalysisML.Stemmer
-    open SentimentFS.Text
-    open SentimentFS.Text.Regex
+    open SentimentalAnalysisML.Utils
+    open SentimentalAnalysisML.Utils.Regex
     
     let private removeSuffixIon(word:string) =  
         word |> StepsUtils.removeSuffix 
@@ -255,8 +254,8 @@ module Step5 =
 
 module Step6 =
     open SentimentalAnalysisML.Stemmer.Utils
-    open SentimentFS.Text
-    open SentimentFS.Text.Regex
+    open SentimentalAnalysisML.Utils
+    open SentimentalAnalysisML.Utils.Regex
     open SentimentalAnalysisML.Stemmer.Dto
     open SentimentalAnalysisML.Stemmer
     open System.Text.RegularExpressions

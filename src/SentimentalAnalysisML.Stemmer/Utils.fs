@@ -1,7 +1,7 @@
 namespace SentimentalAnalysisML.Stemmer.Utils 
 
 module StepsUtils =
-    open StemmerFS.Dto
+    open SentimentalAnalysisML.Stemmer.Dto
 
     [<CompiledName("ActionReducer")>]
     let rec actionReducer word actions = 

@@ -2,9 +2,9 @@ namespace SentimentalAnalysisML.Stemmer
 
 module Stemmer =
     open SentimentalAnalysisML.Stemmer.Dto
-    open SentimentFS.Text.Text
-    open StemmerFS
-    open StemmerFS.Utils
+    open SentimentalAnalysisML.Utils.Text
+    open SentimentalAnalysisML.Utils
+    open SentimentalAnalysisML.Stemmer
     
     [<CompiledName("Stem")>]
     let rec stem =    
