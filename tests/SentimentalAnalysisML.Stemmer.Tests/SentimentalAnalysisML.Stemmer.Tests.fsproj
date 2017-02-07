@@ -51,6 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tests.fs" />
+    <Compile Include="Dto.Tests.fs" />
+    <Compile Include="SpecialWord.Tests.fs" />
+    <Compile Include="Steps.Tests.fs" />
+    <Compile Include="Rules.Tests.fs" />
+    <Compile Include="Stemmer.Tests.fs" />
     <Compile Include="Main.fs" />
     <None Include="App.config" />
   </ItemGroup>
@@ -81,7 +86,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
       <ItemGroup>
         <Reference Include="Argu">
-          <HintPath>..\..\packages\Argu\lib\net35\Argu.dll</HintPath>
+          <HintPath>..\..\packages\test\Argu\lib\net35\Argu.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -90,7 +95,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
       <ItemGroup>
         <Reference Include="Argu">
-          <HintPath>..\..\packages\Argu\lib\net40\Argu.dll</HintPath>
+          <HintPath>..\..\packages\test\Argu\lib\net40\Argu.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -101,7 +106,7 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
       <ItemGroup>
         <Reference Include="Expecto">
-          <HintPath>..\..\packages\Expecto\lib\net40\Expecto.dll</HintPath>
+          <HintPath>..\..\packages\test\Expecto\lib\net40\Expecto.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -111,18 +116,18 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v2.0' Or $(TargetFrameworkVersion) == 'v3.0')">
       <ItemGroup>
+        <Reference Include="Mono.Cecil">
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\net20\Mono.Cecil.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="Mono.Cecil.Mdb">
-          <HintPath>..\..\packages\Mono.Cecil\lib\net20\Mono.Cecil.Mdb.dll</HintPath>
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\net20\Mono.Cecil.Mdb.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
         <Reference Include="Mono.Cecil.Pdb">
-          <HintPath>..\..\packages\Mono.Cecil\lib\net20\Mono.Cecil.Pdb.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-        <Reference Include="Mono.Cecil">
-          <HintPath>..\..\packages\Mono.Cecil\lib\net20\Mono.Cecil.dll</HintPath>
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\net20\Mono.Cecil.Pdb.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -130,23 +135,23 @@
     </When>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
       <ItemGroup>
+        <Reference Include="Mono.Cecil">
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\net35\Mono.Cecil.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="Mono.Cecil.Mdb">
-          <HintPath>..\..\packages\Mono.Cecil\lib\net35\Mono.Cecil.Mdb.dll</HintPath>
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\net35\Mono.Cecil.Mdb.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
         <Reference Include="Mono.Cecil.Pdb">
-          <HintPath>..\..\packages\Mono.Cecil\lib\net35\Mono.Cecil.Pdb.dll</HintPath>
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\net35\Mono.Cecil.Pdb.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
         <Reference Include="Mono.Cecil.Rocks">
-          <HintPath>..\..\packages\Mono.Cecil\lib\net35\Mono.Cecil.Rocks.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-        <Reference Include="Mono.Cecil">
-          <HintPath>..\..\packages\Mono.Cecil\lib\net35\Mono.Cecil.dll</HintPath>
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\net35\Mono.Cecil.Rocks.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -154,23 +159,23 @@
     </When>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.0'">
       <ItemGroup>
+        <Reference Include="Mono.Cecil">
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\net40\Mono.Cecil.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="Mono.Cecil.Mdb">
-          <HintPath>..\..\packages\Mono.Cecil\lib\net40\Mono.Cecil.Mdb.dll</HintPath>
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\net40\Mono.Cecil.Mdb.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
         <Reference Include="Mono.Cecil.Pdb">
-          <HintPath>..\..\packages\Mono.Cecil\lib\net40\Mono.Cecil.Pdb.dll</HintPath>
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\net40\Mono.Cecil.Pdb.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
         <Reference Include="Mono.Cecil.Rocks">
-          <HintPath>..\..\packages\Mono.Cecil\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-        <Reference Include="Mono.Cecil">
-          <HintPath>..\..\packages\Mono.Cecil\lib\net40\Mono.Cecil.dll</HintPath>
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -178,23 +183,23 @@
     </When>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
       <ItemGroup>
+        <Reference Include="Mono.Cecil">
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\net45\Mono.Cecil.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="Mono.Cecil.Mdb">
-          <HintPath>..\..\packages\Mono.Cecil\lib\net45\Mono.Cecil.Mdb.dll</HintPath>
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\net45\Mono.Cecil.Mdb.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
         <Reference Include="Mono.Cecil.Pdb">
-          <HintPath>..\..\packages\Mono.Cecil\lib\net45\Mono.Cecil.Pdb.dll</HintPath>
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\net45\Mono.Cecil.Pdb.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
         <Reference Include="Mono.Cecil.Rocks">
-          <HintPath>..\..\packages\Mono.Cecil\lib\net45\Mono.Cecil.Rocks.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-        <Reference Include="Mono.Cecil">
-          <HintPath>..\..\packages\Mono.Cecil\lib\net45\Mono.Cecil.dll</HintPath>
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\net45\Mono.Cecil.Rocks.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -202,13 +207,13 @@
     </When>
     <When Condition="$(TargetFrameworkIdentifier) == 'Silverlight' And $(TargetFrameworkVersion) == 'v5.0'">
       <ItemGroup>
-        <Reference Include="Mono.Cecil.Rocks">
-          <HintPath>..\..\packages\Mono.Cecil\lib\sl5\Mono.Cecil.Rocks.dll</HintPath>
+        <Reference Include="Mono.Cecil">
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\sl5\Mono.Cecil.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
-        <Reference Include="Mono.Cecil">
-          <HintPath>..\..\packages\Mono.Cecil\lib\sl5\Mono.Cecil.dll</HintPath>
+        <Reference Include="Mono.Cecil.Rocks">
+          <HintPath>..\..\packages\test\Mono.Cecil\lib\sl5\Mono.Cecil.Rocks.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>

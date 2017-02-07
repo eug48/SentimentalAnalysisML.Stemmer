@@ -16,3 +16,9 @@ group Test
   source https://nuget.org/api/v2
   nuget Expecto
   nuget FSharp.Core
+
+group ML
+  source https://nuget.org/api/v2
+  source https://www.myget.org/F/sentimentalanalysisml/api/v2
+
+  nuget SentimentalAnalysisML.Utils
