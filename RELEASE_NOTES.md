@@ -1,3 +1,5 @@
+### 1.1.1 - Febuary 8 2017
+* Update dependencies
 ### 1.1.0 - Febuary 8 2017
 * Port library to core clr
 
