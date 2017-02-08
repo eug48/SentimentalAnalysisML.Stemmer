@@ -1,7 +1,7 @@
 [![Issue Stats](http://issuestats.com/github/SentimentalAnalysisML/SentimentalAnalysisML.Stemmer/badge/issue)](http://issuestats.com/github/SentimentalAnalysisML/SentimentalAnalysisML.Stemmer)
 [![Issue Stats](http://issuestats.com/github/SentimentalAnalysisML/SentimentalAnalysisML.Stemmer/badge/pr)](http://issuestats.com/github/SentimentalAnalysisML/SentimentalAnalysisML.Stemmer)
 
-# StemmerFS
+# SentimentalAnalysisML.Stemmer
 
 An English ([Porter2](http://snowballstem.org/algorithms/english/stemmer.html)) stemming implementation in F#.
 
@@ -13,12 +13,12 @@ An English ([Porter2](http://snowballstem.org/algorithms/english/stemmer.html)) 
 
 ## Requirements
 
-StemmerFS requires .Net 4.6.1
+SentimentalAnalysisML.Stemmer requires .Net 4.6.1
 
 ## Usage
 
 ```fsharp
-    open StemmerFS
+    open SentimentalAnalysisML.Stemmer
     let result = Stemmer.stem "capabilities" // "capabl"
 
 ```  
