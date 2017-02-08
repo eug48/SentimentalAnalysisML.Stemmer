@@ -1,0 +1,29 @@
+{
+    "version": "0.0.1",
+    "buildOptions": {
+        "debugType": "portable",
+        "compilerName": "fsc",
+        "compile": {
+            "includeFiles": [
+                "../SentimentalAnalysisML.Stemmer/Library.fs",
+                "../SentimentalAnalysisML.Stemmer/Dto.fs",
+                "../SentimentalAnalysisML.Stemmer/Utils.fs",
+                "../SentimentalAnalysisML.Stemmer/Rules.fs",
+                "../SentimentalAnalysisML.Stemmer/Steps.fs",
+                "../SentimentalAnalysisML.Stemmer/SpecialWord.fs",
+                "../SentimentalAnalysisML.Stemmer/Stemmer.fs"
+            ]
+        }
+    },
+    "tools": {
+        "dotnet-compile-fsc": "1.0.0-preview2.1-*"
+    },
+    "frameworks": {
+        "netstandard1.6": {
+            "dependencies": {
+                "NETStandard.Library": "1.6.1",
+                "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629"
+            }
+        }
+    }
+}
