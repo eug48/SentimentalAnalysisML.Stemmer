@@ -31,7 +31,7 @@ NUGET
   remote: https://www.nuget.org/api/v2
     FSharp.Core (4.0.0.1)
   remote: https://www.myget.org/F/sentimentalanalysisml/api/v2
-    SentimentalAnalysisML.Utils (0.1.1)
+    SentimentalAnalysisML.Utils (0.1.2)
       FSharp.Core
 
 GROUP Test
