@@ -145,6 +145,16 @@ Target "Build" (fun _ ->
     |> ignore
 )
 
+let publishNetCore src = 
+    DotNetCli.Restore( fun p -> { p with NoCache = true; WorkingDir = src })
+    DotNetCli.Build( fun p -> { p with Configuration = "Release"; WorkingDir = src })
+    DotNetCli.SetVersionInProjectJson release.NugetVersion (sprintf "%s/project.json" src)
+    DotNetCli.Pack(fun p -> { p with Configuration = "Release"; WorkingDir = src })
+
+Target "NetCoreBuild" (fun _ -> 
+    publishNetCore "./src/SentimentalAnalysisML.Stemmer.netcore"
+)
+
 // --------------------------------------------------------------------------------------
 // Run the unit tests using test runner
 
