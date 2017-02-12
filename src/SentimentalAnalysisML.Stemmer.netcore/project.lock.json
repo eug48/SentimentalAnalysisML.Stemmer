@@ -3,20 +3,32 @@
   "version": 2,
   "targets": {
     ".NETStandard,Version=v1.6": {
-      "Microsoft.FSharp.Core.netcore/1.0.0-alpha-160629": {
+      "Microsoft.FSharp.Core.netcore/1.0.0-rc-170122": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "NETStandard.Library": "1.6.0",
+          "System.Collections": "4.0.11",
+          "System.Console": "4.0.0",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Diagnostics.Tools": "4.0.1",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.Linq": "4.1.0",
           "System.Linq.Expressions": "4.1.0",
           "System.Linq.Queryable": "4.0.1",
           "System.Net.Requests": "4.0.11",
-          "System.Reflection.Emit": "4.0.1",
-          "System.Reflection.TypeExtensions": "4.1.0",
-          "System.Runtime.Loader": "4.0.0",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Numerics": "4.0.1",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11",
           "System.Threading.Tasks.Parallel": "4.0.1",
           "System.Threading.Thread": "4.0.0",
-          "System.Threading.ThreadPool": "4.0.10"
+          "System.Threading.ThreadPool": "4.0.10",
+          "System.Threading.Timer": "4.0.1"
         },
         "compile": {
           "lib/netstandard1.6/FSharp.Core.dll": {}
@@ -30,6 +42,10 @@
             "rid": "any"
           },
           "runtimes/any/native/FSharp.Core.sigdata": {
+            "assetType": "native",
+            "rid": "any"
+          },
+          "runtimes/any/native/FSharp.Core.xml": {
             "assetType": "native",
             "rid": "any"
           }
@@ -284,10 +300,10 @@
           }
         }
       },
-      "SentimentalAnalysisML.Utils.netcore/0.1.1": {
+      "SentimentalAnalysisML.Utils.netcore/0.1.5": {
         "type": "package",
         "dependencies": {
-          "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629",
+          "Microsoft.FSharp.Core.netcore": "1.0.0-rc-170122",
           "NETStandard.Library": "1.6.1"
         },
         "compile": {
@@ -778,7 +794,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.1/System.Reflection.Emit.dll": {}
+          "ref/netstandard1.1/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.dll": {}
@@ -792,7 +808,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/System.Reflection.Emit.ILGeneration.dll": {}
+          "ref/netstandard1.0/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.ILGeneration.dll": {}
@@ -843,7 +859,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.Reflection.TypeExtensions.dll": {}
+          "ref/netstandard1.5/_._": {}
         },
         "runtime": {
           "lib/netstandard1.5/System.Reflection.TypeExtensions.dll": {}
@@ -934,20 +950,6 @@
             "assetType": "runtime",
             "rid": "win"
           }
-        }
-      },
-      "System.Runtime.Loader/4.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.IO": "4.1.0",
-          "System.Reflection": "4.1.0",
-          "System.Runtime": "4.1.0"
-        },
-        "compile": {
-          "ref/netstandard1.5/System.Runtime.Loader.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.5/System.Runtime.Loader.dll": {}
         }
       },
       "System.Runtime.Numerics/4.3.0": {
@@ -1367,21 +1369,23 @@
     }
   },
   "libraries": {
-    "Microsoft.FSharp.Core.netcore/1.0.0-alpha-160629": {
-      "sha512": "T4n8//0DBC9JWuZ6HY5eErgLg16bPXo+q49UX4m+MrDIMP7LScUfS3otExI0/Un4Ibs+OjQ6PB7mnM8rHcy13w==",
+    "Microsoft.FSharp.Core.netcore/1.0.0-rc-170122": {
+      "sha512": "r+xpTQYo8HL3pxytFzC2TvaKjzJrIL3ok0gnrSM2HwdIQ8WTDzA2NCdjW9MscmCco3yFM+wdHBQUWnoXvsRpLQ==",
       "type": "package",
-      "path": "Microsoft.FSharp.Core.netcore/1.0.0-alpha-160629",
+      "path": "Microsoft.FSharp.Core.netcore/1.0.0-rc-170122",
       "files": [
+        "Microsoft.FSharp.Core.netcore.1.0.0-rc-170122.nupkg.sha512",
+        "Microsoft.FSharp.Core.netcore.nuspec",
         "content/any/netstandard1.6/FSharp.Core.optdata",
         "content/any/netstandard1.6/FSharp.Core.sigdata",
         "lib/netstandard1.6/FSharp.Core.dll",
         "lib/netstandard1.6/FSharp.Core.optdata",
         "lib/netstandard1.6/FSharp.Core.runtimeconfig.json",
         "lib/netstandard1.6/FSharp.Core.sigdata",
-        "microsoft.fsharp.core.netcore.1.0.0-alpha-160629.nupkg.sha512",
-        "microsoft.fsharp.core.netcore.nuspec",
+        "lib/netstandard1.6/FSharp.Core.xml",
         "runtimes/any/native/FSharp.Core.optdata",
-        "runtimes/any/native/FSharp.Core.sigdata"
+        "runtimes/any/native/FSharp.Core.sigdata",
+        "runtimes/any/native/FSharp.Core.xml"
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
@@ -1649,12 +1653,12 @@
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
       ]
     },
-    "SentimentalAnalysisML.Utils.netcore/0.1.1": {
-      "sha512": "9pKOccW4fb6hXrkDomkwINVOtX21upih/hogLfCpv4Oaik4mHr8m/CHdgnOj6jnUg/WVgYRS7MYGQqJguGUQQg==",
+    "SentimentalAnalysisML.Utils.netcore/0.1.5": {
+      "sha512": "7GZSq+MaA1S7w6iSsrrjtxpAHTABewYmvDkA+b/+VnB5zqsolbJkigHyl6kJikpPFfGufBliyW4JKbEv7RxHhg==",
       "type": "package",
-      "path": "SentimentalAnalysisML.Utils.netcore/0.1.1",
+      "path": "SentimentalAnalysisML.Utils.netcore/0.1.5",
       "files": [
-        "SentimentalAnalysisML.Utils.netcore.0.1.1.nupkg.sha512",
+        "SentimentalAnalysisML.Utils.netcore.0.1.5.nupkg.sha512",
         "SentimentalAnalysisML.Utils.netcore.nuspec",
         "lib/netstandard1.6/SentimentalAnalysisML.Utils.netcore.dll"
       ]
@@ -2673,7 +2677,7 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "AwIxFFL5HcadLoyG57WfPP2ZC+EjC7ST8VC4fJ0Hdt1CgInLjUqmXer0uPgdwQL8sPsvp+uWsL7fK6+9JRqfKg==",
+      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "type": "package",
       "path": "System.Linq.Queryable/4.0.1",
       "files": [
@@ -2887,7 +2891,7 @@
       ]
     },
     "System.Net.Requests/4.0.11": {
-      "sha512": "sNDf8xOnuVBLolNUeyNdJbZbxxf8UrZts5gp+oTAY7lY9w9etBdMNYPbdkdWwc2+xcEzmbO2dOndlpRoFoX2UQ==",
+      "sha512": "vxGt7C0cZixN+VqoSW4Yakc1Y9WknmxauDqzxgpw/FnBdz4kQNN51l4wxdXX5VY1xjqy//+G+4CvJWp1+f+y6Q==",
       "type": "package",
       "path": "System.Net.Requests/4.0.11",
       "files": [
@@ -3004,7 +3008,7 @@
       ]
     },
     "System.Net.WebHeaderCollection/4.0.1": {
-      "sha512": "dRFXUjfWJV5l1ILbbw6C1cazYSIFH28fFm8K8Ypr7lz2hJLlTPTl0xasB98qrj5ou5dn1r8XiuCVxOoT52Im0g==",
+      "sha512": "XX2TIAN+wBSAIV51BU2FvvXMdstUa8b0FBSZmDWjZdwUMmggQSifpTOZ5fNH20z9ZCg2fkV1L5SsZnpO2RQDRQ==",
       "type": "package",
       "path": "System.Net.WebHeaderCollection/4.0.1",
       "files": [
@@ -3853,30 +3857,6 @@
         "runtimes/win/lib/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll"
       ]
     },
-    "System.Runtime.Loader/4.0.0": {
-      "sha512": "2Gsqy+whTMHMTgi617Q2S47ACHELQ85xX41DUTS6mk9EdAd1yh2oyD6jtzgAh9GO9swUwvkRTo4WjjMXZosWlw==",
-      "type": "package",
-      "path": "System.Runtime.Loader/4.0.0",
-      "files": [
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/net462/_._",
-        "lib/netstandard1.5/System.Runtime.Loader.dll",
-        "ref/netstandard1.5/System.Runtime.Loader.dll",
-        "ref/netstandard1.5/System.Runtime.Loader.xml",
-        "ref/netstandard1.5/de/System.Runtime.Loader.xml",
-        "ref/netstandard1.5/es/System.Runtime.Loader.xml",
-        "ref/netstandard1.5/fr/System.Runtime.Loader.xml",
-        "ref/netstandard1.5/it/System.Runtime.Loader.xml",
-        "ref/netstandard1.5/ja/System.Runtime.Loader.xml",
-        "ref/netstandard1.5/ko/System.Runtime.Loader.xml",
-        "ref/netstandard1.5/ru/System.Runtime.Loader.xml",
-        "ref/netstandard1.5/zh-hans/System.Runtime.Loader.xml",
-        "ref/netstandard1.5/zh-hant/System.Runtime.Loader.xml",
-        "system.runtime.loader.4.0.0.nupkg.sha512",
-        "system.runtime.loader.nuspec"
-      ]
-    },
     "System.Runtime.Numerics/4.3.0": {
       "sha512": "yMH+MfdzHjy17l2KESnPiF2dwq7T+xLnSJar7slyimAkUh/gTrS9/UQOtv7xarskJ2/XDSNvfLGOBQPjL7PaHQ==",
       "type": "package",
@@ -4526,7 +4506,7 @@
       ]
     },
     "System.Threading.Tasks.Parallel/4.0.1": {
-      "sha512": "FCJPXeire1ETTpVWoDKLEkOGO+natXI2QS6+wy2jNnHvjejt7zCBit6mpAXmbALWGFJTyS95tc9b62WDKqXZdA==",
+      "sha512": "7Pc9t25bcynT9FpMvkUw4ZjYwUiGup/5cJFW72/5MgCG+np2cfVUMdh29u8d7onxX7d8PS3J+wL73zQRqkdrSA==",
       "type": "package",
       "path": "System.Threading.Tasks.Parallel/4.0.1",
       "files": [
@@ -4581,7 +4561,7 @@
       ]
     },
     "System.Threading.Thread/4.0.0": {
-      "sha512": "84fc71YaQxzbNZvpsE51iTE0HJR1xOxTjLjMTmDSAsyAWZdhA1y2z3ltoWx3yF+UnJsoDCobrDCBXQWyb28ZSg==",
+      "sha512": "gIdJqDXlOr5W9zeqFErLw3dsOsiShSCYtF9SEHitACycmvNvY8odf9kiKvp6V7aibc8C4HzzNBkWXjyfn7plbQ==",
       "type": "package",
       "path": "System.Threading.Thread/4.0.0",
       "files": [
@@ -4619,7 +4599,7 @@
       ]
     },
     "System.Threading.ThreadPool/4.0.10": {
-      "sha512": "fXNemHIk3D2iBgvklX+JsQcsgnM+4vRzy2PPcVoatJbMUVxp79kFIPTlQ7V7YyX3dh1dpkELRgQnyp8j1MYSuQ==",
+      "sha512": "IMXgB5Vf/5Qw1kpoVgJMOvUO1l32aC+qC3OaIZjWJOjvcxuxNWOK2ZTWWYXfij22NHxT2j1yWX5vlAeQWld9vA==",
       "type": "package",
       "path": "System.Threading.ThreadPool/4.0.10",
       "files": [
@@ -4850,10 +4830,10 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "SentimentalAnalysisML.Utils.netcore >= 0.1.1"
+      "SentimentalAnalysisML.Utils.netcore >= 0.1.5"
     ],
     ".NETStandard,Version=v1.6": [
-      "Microsoft.FSharp.Core.netcore >= 1.0.0-alpha-160629",
+      "Microsoft.FSharp.Core.netcore >= 1.0.0-rc-170122",
       "NETStandard.Library >= 1.6.1"
     ]
   },
