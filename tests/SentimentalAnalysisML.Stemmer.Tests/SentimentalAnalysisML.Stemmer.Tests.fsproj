@@ -50,7 +50,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tests.fs" />
     <Compile Include="Dto.Tests.fs" />
     <Compile Include="SpecialWord.Tests.fs" />
     <Compile Include="Steps.Tests.fs" />

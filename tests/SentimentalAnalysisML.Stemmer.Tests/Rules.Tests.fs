@@ -82,13 +82,13 @@ module Rules =
                     Expect.equal subject "ul" "should equal ul"
                 testCase "beauty" <| fun _ -> 
                     let subject = Rules.r2 "beauty"
-                    Expect.equal subject "" "should equal be string"
+                    Expect.equal subject "" "should be empty string"
                 testCase "beaut" <| fun _ -> 
                     let subject = Rules.r2 "beaut"
-                    Expect.equal subject "" "should equal be string"
+                    Expect.equal subject "" "should be empty string"
                 testCase "beau" <| fun _ -> 
                     let subject = Rules.r2 "beau"
-                    Expect.equal subject "" "should equal be string"
+                    Expect.equal subject "" "should be empty string"
                 testCase "animadversion" <| fun _ -> 
                     let subject = Rules.r2 "animadversion"
                     Expect.equal subject "adversion" "should equal adversion"

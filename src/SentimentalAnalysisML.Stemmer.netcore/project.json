@@ -5,7 +5,6 @@
         "compilerName": "fsc",
         "compile": {
             "includeFiles": [
-                "../SentimentalAnalysisML.Stemmer/Library.fs",
                 "../SentimentalAnalysisML.Stemmer/Dto.fs",
                 "../SentimentalAnalysisML.Stemmer/Utils.fs",
                 "../SentimentalAnalysisML.Stemmer/Rules.fs",

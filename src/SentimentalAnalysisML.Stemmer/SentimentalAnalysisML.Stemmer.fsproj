@@ -60,7 +60,6 @@
   -->
   <Import Project="..\..\.paket\paket.targets" />
   <ItemGroup>
-    <Compile Include="Library.fs" />
     <Compile Include="Dto.fs" />
     <Compile Include="Utils.fs" />
     <Compile Include="Rules.fs" />
