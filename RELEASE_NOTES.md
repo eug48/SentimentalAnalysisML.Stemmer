@@ -1,3 +1,6 @@
+### 1.1.2 - Febuary 12 2017
+* Update dependencies
+
 ### 1.1.1 - Febuary 8 2017
 * Update dependencies
 
