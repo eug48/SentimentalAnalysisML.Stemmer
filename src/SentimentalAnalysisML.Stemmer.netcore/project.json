@@ -5,7 +5,6 @@
         "compilerName": "fsc",
         "compile": {
             "includeFiles": [
-                "../SentimentalAnalysisML.Stemmer/Library.fs",
                 "../SentimentalAnalysisML.Stemmer/Dto.fs",
                 "../SentimentalAnalysisML.Stemmer/Utils.fs",
                 "../SentimentalAnalysisML.Stemmer/Rules.fs",
@@ -16,7 +15,7 @@
         }
     },
     "dependencies": {
-        "SentimentalAnalysisML.Utils.netcore": "0.1.5"
+        "SentimentalAnalysisML.Utils.netcore": "0.1.6"
     },
     "tools": {
         "dotnet-compile-fsc": "1.0.0-preview2.1-*"
@@ -25,7 +24,7 @@
         "netstandard1.6": {
             "dependencies": {
                 "NETStandard.Library": "1.6.1",
-                "Microsoft.FSharp.Core.netcore": "1.0.0-rc-170122"
+                "FSharp.Core": "4.1.0"
             }
         }
     }

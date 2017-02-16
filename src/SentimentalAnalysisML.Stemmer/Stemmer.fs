@@ -8,7 +8,7 @@ module Stemmer =
     
     [<CompiledName("Stem")>]
     let rec stem =    
-        let localstem (word: string) : string =
+        let localstem = fun (word: string) ->
             if word.Length <= 2 then 
                 word
             else 

@@ -25,9 +25,12 @@ SentimentalAnalysisML.Stemmer requires .Net 4.6.1
 
 ## Build Status
 
-Mono | .NET | MyGet
----- | ---- | ----
-[![Build Status](https://travis-ci.org/SentimentalAnalysisML/SentimentalAnalysisML.Stemmer.svg?branch=master)](https://travis-ci.org/SentimentalAnalysisML/SentimentalAnalysisML.Stemmer)| [![Build status](https://ci.appveyor.com/api/projects/status/d7lk960dgq7gpvqa?svg=true)](https://ci.appveyor.com/project/dominikus1993/sentimentalanalysisml-stemmer) | [![sentimentalanalysisml MyGet Build Status](https://www.myget.org/BuildSource/Badge/sentimentalanalysisml?identifier=45a497f1-9d16-4476-9f21-741ccf803606)](https://www.myget.org/)
+Mono | .NET | MyGet | CoreCLR
+---- | ---- | ----  | -------
+[![Build Status](https://travis-ci.org/SentimentalAnalysisML/SentimentalAnalysisML.Stemmer.svg?branch=master)](https://travis-ci.org/SentimentalAnalysisML/SentimentalAnalysisML.Stemmer)| [![Build status](https://ci.appveyor.com/api/projects/status/d7lk960dgq7gpvqa?svg=true)](https://ci.appveyor.com/project/dominikus1993/sentimentalanalysisml-stemmer) | [![sentimentalanalysisml MyGet Build Status](https://www.myget.org/BuildSource/Badge/sentimentalanalysisml?identifier=45a497f1-9d16-4476-9f21-741ccf803606)](https://www.myget.org/) | [![CircleCI](https://circleci.com/gh/SentimentalAnalysisML/SentimentalAnalysisML.Stemmer.svg?style=svg)](https://circleci.com/gh/SentimentalAnalysisML/SentimentalAnalysisML.Stemmer)
+
+## BuildHistory
+[![Build history](https://buildstats.info/appveyor/chart/dominikus1993/sentimentalanalysisml-stemmer)](https://ci.appveyor.com/project/dominikus1993/sentimentalanalysisml-stemmer/history)
 
 ## Maintainer(s)
 
