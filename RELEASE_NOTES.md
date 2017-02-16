@@ -1,3 +1,6 @@
+### 1.2.0 - Febuary 16 2017
+* Fsharp.Core 4.1.0
+
 ### 1.1.2 - Febuary 12 2017
 * Update dependencies
 
