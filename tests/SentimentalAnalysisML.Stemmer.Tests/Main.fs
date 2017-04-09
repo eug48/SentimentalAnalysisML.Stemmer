@@ -6,4 +6,5 @@ module Program =
     
     [<EntryPoint>]
     let main argv =
-        Tests.runTestsInAssembly defaultConfig argv
+        let ret = Tests.runTestsInAssembly defaultConfig argv
+        ret

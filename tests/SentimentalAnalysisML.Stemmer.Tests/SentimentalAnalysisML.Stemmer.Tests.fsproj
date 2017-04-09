@@ -54,6 +54,7 @@
     <Compile Include="Stemmer.Tests.fs" />
     <Compile Include="Main.fs" />
     <None Include="App.config" />
+    <EmbeddedResource Include="diffs.txt" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">14</MinimumVisualStudioVersion>
