@@ -3,15 +3,22 @@ namespace SentimentalAnalysisML.Stemmer.Steps
 module Step0 = 
     open System.Text.RegularExpressions
     open SentimentalAnalysisML.Stemmer.Rules
+    open SentimentalAnalysisML.Stemmer.Utils
 
-    [<CompiledName("TrimApostrophes")>]
-    let rec trimApostrophes(word:string) =  
-        if word.StartsWith("'") then
-            trimApostrophes(word.Substring(1))
-        elif word.EndsWith("'") then
-            trimApostrophes(word.Substring(0, word.Length - 1))
+    [<CompiledName("TrimEndApostrophe")>]
+    let rec trimEndApostrophe(word:string) =  
+        if word.EndsWith("'") then
+            word.Substring(0, word.Length - 1)
         else
             word
+    
+    [<CompiledName("TrimStartApostrophe")>]
+    let trimStartApostrophe(word:string) =
+        if word.StartsWith("'") then
+            word.Substring(1)
+        else
+            word
+
 
     [<CompiledName("RemoveSApostrophe")>]
     let removeSApostrophe(word: string) =
@@ -29,8 +36,9 @@ module Step0 =
 
     [<CompiledName("Apply")>]
     let apply word = 
-        word |> trimApostrophes |> removeSApostrophe |> markConsonantY
-
+        let result = word |> trimStartApostrophe |> trimEndApostrophe |> removeSApostrophe |> markConsonantY
+        StepsUtils.log "Step 0: %s" result
+        result
 
 module Step1 =
     open SentimentalAnalysisML.Stemmer.Dto
@@ -60,7 +68,7 @@ module Step1 =
 
     [<CompiledName("RemoveS")>]
     let removeS(word: string) =
-        if Regex.IsMatch(word, (sprintf "(%s).+s" vowels)) then
+        if Regex.IsMatch(word, (sprintf "(%s).+s$" vowels)) then
             Found(word.Substring(0, word.Length - 1))
         else
             Next(word)
@@ -79,10 +87,13 @@ module Step1 =
      
     [<CompiledName("Apply")>]
     let apply(word: string) =
-        word |> replaceSuffix
+        let result = word |> replaceSuffix
+        StepsUtils.log "Step 1: %s" result
+        result
 
 module Step2 =
     open SentimentalAnalysisML.Stemmer.Utils
+    open SentimentalAnalysisML.Stemmer.Utils.StepsUtils
     open SentimentalAnalysisML.Stemmer.Rules
     open SentimentalAnalysisML.Stemmer.Dto
     open SentimentalAnalysisML.Stemmer
@@ -103,7 +114,7 @@ module Step2 =
     
     [<CompiledName("RemoveEdEdlyIngIngly")>]
     let removeEdEdlyIngIngly(word: string) =
-        let rule = sprintf "(%s.*)(ingly|edly|ing|ed)" Rules.vowels;
+        let rule = sprintf "(%s.*)(ingly|edly|ing|ed)$" Rules.vowels;
         if Regex.IsMatch(word, rule) then
             Found(Regex.Replace(word, rule,"$1") |> postRemoveEdEdlyIngIngly)
         else 
@@ -135,13 +146,15 @@ module Step2 =
     [<CompiledName("ReplaceSuffixY")>]
     let replaceSuffixY(word: string) =
         match word.ToLower() with
-        | FirstMatch (sprintf ".+%sy" Rules.consonant) res -> 
-            res |> Text.replaceSuffix ("y", "i")
+        | SuffixMatch (sprintf ".+%sy" Rules.consonant) _ ->
+            word.Substring(0, word.Length - 1) + "i"
         | _ -> word
 
     [<CompiledName("Apply")>]
     let apply(word: string) = 
-        word |> replaceSuffix |> replaceSuffixY
+        let result = word |> replaceSuffix |> replaceSuffixY
+        log "Step 2: %s" result
+        result
 
 module Step3 =
     open SentimentalAnalysisML.Stemmer
@@ -193,7 +206,9 @@ module Step3 =
 
     [<CompiledName("Apply")>]
     let apply(word: string) = 
-        word |> replaceSuffixInR1
+        let result = word |> replaceSuffixInR1
+        StepsUtils.log "Step 3: %s" result
+        result
 
 module Step4 =
     open SentimentalAnalysisML.Stemmer.Utils
@@ -219,10 +234,14 @@ module Step4 =
             Rules.replaceR1Suffix "ful" ""
             replaceSuffixAtiveInR2
         ]
-        fun word -> StepsUtils.actionReducer word actions
+        fun word ->
+            let result = StepsUtils.actionReducer word actions
+            StepsUtils.log "Step 4: %s" result
+            result
 
 module Step5 = 
     open SentimentalAnalysisML.Stemmer.Utils
+    open SentimentalAnalysisML.Stemmer.Utils.StepsUtils
     open SentimentalAnalysisML.Stemmer.Dto
     open SentimentalAnalysisML.Stemmer
     open SentimentalAnalysisML.Utils
@@ -240,7 +259,7 @@ module Step5 =
     
     let private removeSuffix(word: string) = 
         match word with
-        | FirstMatch "(al|ance|ence|er|ic|able|ible|ant|ement|ment|ent|ism|ate|iti|ous|ive|ize)" result -> 
+        | SuffixMatch "(al|ance|ence|er|ic|able|ible|ant|ement|ment|ent|ism|ate|iti|ous|ive|ize)" result -> 
             removeSuffixinR2 word result
         | _ -> Next(word)
     
@@ -250,7 +269,10 @@ module Step5 =
             removeSuffix
             removeSuffixIon
         ]
-        fun (word: string) -> StepsUtils.actionReducer word actions
+        fun (word: string) ->
+            let result = StepsUtils.actionReducer word actions
+            log "Step 5: %s" result
+            result
 
 module Step6 =
     open SentimentalAnalysisML.Stemmer.Utils
@@ -265,7 +287,7 @@ module Step6 =
         let r2 = Rules.r2 word
         if (Text.endsWith(r2)([|"e"|])) then
             word |> Text.replaceSuffix("e", "")
-        elif (Text.endsWith(Rules.r1 word)([|"e"|])) && not (Regex.IsMatch(word, (sprintf "%se" Rules.shortSyllable))) then
+        elif (Text.endsWith(Rules.r1 word)([|"e"|])) && not (Regex.IsMatch(word, (sprintf "%se$" Rules.shortSyllable))) then
             word |> Text.replaceSuffix("e", "")
         elif (Text.endsWith(r2)([|"l"|])) && (Text.endsWith(word)([|"ll"|])) then
             word |> Text.replaceSuffix("l", "")
@@ -274,6 +296,7 @@ module Step6 =
 
     [<CompiledName("Apply")>]
     let apply(word: string) = 
-        word |> removeSuffixInR2
-
+        let result = word |> removeSuffixInR2
+        StepsUtils.log "Step 6: %s" result
+        result
         

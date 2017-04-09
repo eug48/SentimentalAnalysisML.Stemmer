@@ -4,6 +4,7 @@ module Rules =
     open System.Text.RegularExpressions
     open SentimentalAnalysisML.Stemmer.Dto
     open SentimentalAnalysisML.Stemmer.Utils
+    open SentimentalAnalysisML.Stemmer.Utils.StepsUtils
     open SentimentalAnalysisML.Utils.Regex
     open SentimentalAnalysisML.Utils
 
@@ -40,15 +41,15 @@ module Rules =
         r1(word) = "" && Regex.IsMatch(word, shortSyllable)
     
     let private foundSuffixInR1(suffix: string) (replacement: string) (word: string) =
-        match word with
-        | FirstMatch suffix _ -> 
+        match word |> r1 with
+        | SuffixMatch suffix _ -> 
             Found(word |> Text.replaceSuffix(suffix, replacement))
         | _ ->  Found(word)
 
     [<CompiledName("ReplaceR1Suffix")>]
     let replaceR1Suffix (suffix: string) (replacement: string) (word: string) =
         match word with
-        | FirstMatch suffix _ ->
+        | SuffixMatch suffix _ ->
             word |> foundSuffixInR1 suffix replacement
         | _ -> Next(word)
 

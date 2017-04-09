@@ -31,14 +31,8 @@ module Step0 =
                     Expect.equal subject "test" "should equal test"
             ]
             testList "TrimApostrophes" [
-                testCase "when word has Apostrophes at first position" <| fun _ ->
-                    let subject = Step0.trimApostrophes "'''''''''''''''test"
-                    Expect.equal subject "test" "should equal test"
-                testCase "when word has no Apostrophes at last position" <| fun _ ->
-                    let subject = Step0.trimApostrophes "test'''''''''''''''''''"
-                    Expect.equal subject "test" "should equal test"
                 testCase "when word has no Apostrophes at middle position" <| fun _ ->
-                    let subject = Step0.trimApostrophes "te'st"
+                    let subject = "te'st" |> Step0.trimEndApostrophe |> Step0.trimStartApostrophe
                     Expect.equal subject "te'st" "should equal te'st"
             ]
             testList "Apply" [
